@@ -194,8 +194,19 @@ body {
 }
 .header-logo {
   padding-top: 24px;
-  padding-bottom: 24px;
-  margin-right: 76px;
+  padding-bottom: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-logo {
+    margin-bottom: 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .header-logo {
+    margin-right: 76px;
+  }
 }
 
 .logo-studio-light-theme {
@@ -209,6 +220,127 @@ body {
 /* --------------- /Logo --------------- */
 
 /* --------------- Header ---------------*/
+
+/* ----------Mobile-menu-btn----------- */
+.mobile-menu-open-icon {
+  stroke: var(--color-navy-blue);
+}
+
+.menu-toggle {
+  min-height: 22px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+  padding-top: 80px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+
+  background-color: var(--color-cloud);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform var(--transition-dur-func);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+}
+
+/* .mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+} */
+
+.mobile-menu {
+  margin-bottom: auto;
+}
+
+.mobile-menu :not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mobile-menu-link {
+  display: block;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
+  color: var(--color-navy-blue);
+  transition: color var(--transition-dur-func);
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+  color: var(--color-ocean-hover);
+}
+
+.mobile-contacts :first-child {
+  margin-bottom: 40px;
+}
+
+.mobile-contacts {
+  margin-bottom: 48px;
+}
+
+.mobile-contacts-phone-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
+  color: var(--color-iris-accent);
+}
+
+.mobile-contacts-email-link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-slate);
+}
+
+/* ----------/Mobile-menu-btn----------- */
+
 .header {
   border-bottom: 1px solid var(--color-cornflower);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -225,8 +357,20 @@ body {
   align-items: center;
 }
 
+@media only screen and (max-width: 767px) {
+  .contact {
+    display: none;
+  }
+}
+
 .menu {
   display: flex;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu {
+    display: none;
+  }
 }
 
 .contact-list {
