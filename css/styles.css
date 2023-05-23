@@ -1059,16 +1059,15 @@ body {
 
 .footer-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
   row-gap: 72px;
-  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
   .footer-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: baseline;
+    justify-content: flex-start;
   }
 }
 
@@ -1107,17 +1106,17 @@ body {
   }
 }
 
-.footer-sosial-media {
+.footer-soсial-media {
   max-width: 208px;
 }
 
 @media only screen and (min-width: 1158px) {
-  .footer-sosial-media {
+  .footer-soсial-media {
     margin-right: 80px;
   }
 }
 
-/* .footer-sosial-media {
+/* .footer-soсial-media {
   margin-right: 80px;
   min-width: 208px;
 } */
