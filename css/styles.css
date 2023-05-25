@@ -881,7 +881,6 @@ body {
 
 .customers-icon {
   fill: currentColor;
-  transition: fill 5000ms;
 }
 
 .customers-list-link:hover,
