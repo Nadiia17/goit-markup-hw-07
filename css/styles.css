@@ -247,11 +247,6 @@ body {
   }
 }
 
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background-color: var(--color-ocean-hover);
-}
-
 .menu-container {
   position: fixed;
   top: 0;
@@ -272,6 +267,8 @@ body {
 
   transform: translateX(100%);
   transition: transform var(--transition-dur-func);
+
+  overflow-y: scroll;
 }
 
 .menu-container.is-open {
@@ -300,6 +297,16 @@ body {
   margin-bottom: auto;
 }
 
+.current-page-mobile {
+  color: var(--color-iris-accent);
+}
+
+@media only screen and (max-height: 550px) {
+  .mobile-menu {
+    margin-bottom: 40px;
+  }
+}
+
 .mobile-menu :not(:last-child) {
   margin-bottom: 40px;
 }
@@ -318,6 +325,10 @@ body {
 .mobile-menu-link:hover,
 .mobile-menu-link:focus {
   color: var(--color-ocean-hover);
+}
+
+.current-page-mobile {
+  color: var(--color-iris-accent);
 }
 
 .mobile-contacts :first-child {
@@ -378,19 +389,23 @@ body {
   align-items: center;
 }
 
-@media only screen and (max-width: 767px) {
+.contact {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
   .contact {
-    display: none;
+    display: block;
   }
 }
 
 .menu {
-  display: flex;
+  display: none;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) {
   .menu {
-    display: none;
+    display: flex;
   }
 }
 
@@ -502,7 +517,7 @@ body {
 
   text-align: center;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 429px) {
   .hero {
     max-width: 768px;
 
@@ -511,11 +526,8 @@ body {
   }
 }
 
-@media only screen and (min-width: 1158px) {
+@media only screen and (min-width: 769px) {
   .hero {
-    padding-top: 188px;
-    padding-bottom: 188px;
-
     max-width: 1440px;
 
     background-image: linear-gradient(var(--dark-bg), var(--dark-bg)),
@@ -523,27 +535,34 @@ body {
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
-  (min-resolution: 192dpi) and (max-width: 767px),
-  (min-resolution: 2dppx) and (max-width: 767px) {
+@media only screen and (min-width: 1158px) {
+  .hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 428px),
+  (min-resolution: 192dpi) and (max-width: 428px),
+  (min-resolution: 2dppx) and (max-width: 428px) {
   .hero {
     background-image: linear-gradient(var(--dark-bg), var(--dark-bg)),
       url('../images/hero/bg_mobile@2x.jpg');
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-  (min-resolution: 192dpi) and (min-width: 768px),
-  (min-resolution: 2dppx) and (min-width: 768px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 429px),
+  (min-resolution: 192dpi) and (min-width: 429px),
+  (min-resolution: 2dppx) and (min-width: 429px) {
   .hero {
     background-image: linear-gradient(var(--dark-bg), var(--dark-bg)),
       url('../images/hero/bg_tablet@2x.jpg');
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1158px),
-  (min-resolution: 192dpi) and (min-width: 1158px),
-  (min-resolution: 2dppx) and (min-width: 1158px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 769px),
+  (min-resolution: 192dpi) and (min-width: 769px),
+  (min-resolution: 2dppx) and (min-width: 769px) {
   .hero {
     background-image: linear-gradient(var(--dark-bg), var(--dark-bg)),
       url('../images/hero/bg_desktop@2x.jpg');
@@ -905,7 +924,8 @@ body {
 .filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 16px;
 
   margin-bottom: 48px;
 }
@@ -925,7 +945,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   .filter {
-    max-width: 268px;
+    max-width: 280px;
   }
 }
 
@@ -1073,7 +1093,7 @@ body {
 
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
   .footer-container {
-    max-width: 552px;
+    max-width: 584px;
   }
 }
 
@@ -1237,6 +1257,8 @@ body {
 
   background-color: var(--navy-blue-modal);
 
+  overflow-y: scroll;
+
   transition: opacity var(--transition-dur-func),
     visibility var(--transition-dur-func);
 }
@@ -1267,6 +1289,12 @@ body {
   transition: transform var(--transition-dur-func);
 
   overflow-y: scroll;
+}
+
+@media only screen and (orientation: landscape) and (max-height: 500px) {
+  .modal {
+    top: 95%;
+  }
 }
 
 @media only screen and (max-width: 427px) {
