@@ -16,6 +16,6 @@ Inputmask('+38 (0**) 999-99-99', {
   },
 }).mask(phoneEl);
 
-formEl.addEventListener('submit', event => {
-  event.preventDefault();
-});
+// formEl.addEventListener('submit', event => {
+//   event.preventDefault();
+// });
